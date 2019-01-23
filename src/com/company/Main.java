@@ -36,28 +36,33 @@ public class Main {
 //        When you are finished, create a remote repository on GitHub and connect it to your local repository, then push your changes up to GitHub
 
         double average;
+        double average2;
         double sum = 0;
-        double convertTemp;
+        double sum2 = 0;
 
         Scanner scan = new Scanner(System.in);
         double[] dailyAverageTemp = new double[7];
-        double[] dailyAverageCelsius = new double[7];
+        double[] dailyAverageTempCelsius = new double[7];
 
         for (int i=0; i < dailyAverageTemp.length; i++ ) {
             System.out.println("Enter a temperature number in degrees Fahrenheit for 7 day forecast.");
             dailyAverageTemp[i] =scan.nextDouble();
+            System.out.println(dailyAverageTemp[i]);
             sum = sum + dailyAverageTemp[i];
         }
 
-
-
         average = sum/7;
         System.out.println("The average Fahrenheit temperature is "+ average +"°F");
+
 //converting Fahrenheit to Celsius and creating a array for celsius
         for(int i=0; i < dailyAverageTemp.length; i++) {
-           dailyAverageCelsius[i] = ((dailyAverageTemp[i] - 32)/1.8);
-            System.out.println(dailyAverageCelsius[i]);
+           dailyAverageTempCelsius[i] = ((dailyAverageTemp[i] - 32)/1.8);
+            System.out.println(dailyAverageTempCelsius[i]);
+            sum2 = sum2 + dailyAverageTempCelsius[i];
         }
+
+        average2 = sum2/7;
+        System.out.println("The average Celsius temperature is " + average2 + "°C");
 
 
 
