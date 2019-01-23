@@ -19,10 +19,10 @@ public class Main {
 //        dailyAverageTemp array and prints out each
 //        daily average temperature: done
 //
-//        Next, your program should print out the weekly average temperature (e.g., the average of the averages)
-//        (Remember to add and commit your changes to your repository as you work!)
+//        Next, your program should print out the weekly average temperature (e.g., the average of the averages):done
+//        (Remember to add and commit your changes to your repository as you work!):done
 
-        
+
 
 //        Modify your dailyAverageTemp exercise to use at least one
 //        for-each loop
@@ -37,9 +37,11 @@ public class Main {
 
         double average;
         double sum = 0;
+        double convertTemp;
 
         Scanner scan = new Scanner(System.in);
         double[] dailyAverageTemp = new double[7];
+        double[] dailyAverageCelsius = new double[7];
 
         for (int i=0; i < dailyAverageTemp.length; i++ ) {
             System.out.println("Enter a temperature number in degrees Fahrenheit for 7 day forecast.");
@@ -47,8 +49,16 @@ public class Main {
             sum = sum + dailyAverageTemp[i];
         }
 
+
+
         average = sum/7;
-        System.out.println(average);
+        System.out.println("The average Fahrenheit temperature is "+ average +"°F");
+//converting Fahrenheit to Celsius and creating a array for celsius
+        for(int i=0; i < dailyAverageTemp.length; i++) {
+           dailyAverageCelsius[i] = ((dailyAverageTemp[i] - 32)/1.8);
+            System.out.println(dailyAverageCelsius[i]);
+        }
+
 
 
 
